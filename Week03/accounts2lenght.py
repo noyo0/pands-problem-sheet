@@ -2,7 +2,7 @@
 # Author: Norbert Antal
 # weekly task: week03 extra:
 # Program reads in a 10 character account number and outputs the account number with only the last 4 digits showing (and the first 6 digits replaced with Xs).
-# Modified program to deal with text input of any lenght and include letters
+# Modified program to deal with text input of any lenght and allow letters
 
 # prompt for account number
 accno = (input("Please enter whatever you want: "))
