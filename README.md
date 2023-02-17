@@ -21,4 +21,9 @@
 >>###### 1. len function (https://www.geeksforgeeks.org/python-string-length-len/)  
 >>###### 2. find certain section of a string (https://www.interviewqs.com/ddi-code-snippets/substring-python)
 
-
+- #### Week04
+> w04_collatz.py
+>> Program asks user to input any positive integer and outputs the successive values of the following calculation; At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one. Program ends if the current value is one.
+>>    ###### * References: 
+>>###### 1. list item data types - ref: (https://www.w3schools.com/python/python_lists.asp)  
+>>###### 2. print with custom dividers - ref: https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-single-row)
