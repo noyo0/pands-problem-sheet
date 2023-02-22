@@ -5,7 +5,7 @@
 # Modified program to deal with text input of any lenght and allow letters
 
 # prompt for account number
-accno = (input("Please enter whatever you want: "))
+accno = (input("Please enter your account number: "))
 #check lenght of original account number (source ref: https://www.geeksforgeeks.org/python-string-length-len/) and take 4 to get the number of "X" we need to cover the concealed part of the account number
 coverlenght = len(str(accno))-4
 #convert accno to string
