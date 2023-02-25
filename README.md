@@ -27,3 +27,9 @@
 >>    ###### * References: 
 >>###### 1. list item data types - ref: (https://www.w3schools.com/python/python_lists.asp)  
 >>###### 2. print with custom dividers - ref: https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-single-row)
+
+- #### Week05
+> w05_weekday.py
+>> Program checks if current date falls on a weekday or not
+>>    ###### * References: 
+>>###### 1. datetime module - https://docs.python.org/3/library/datetime.html
