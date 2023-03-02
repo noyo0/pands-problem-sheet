@@ -33,3 +33,9 @@
 >> Program checks if current date falls on a weekday or not
 >>    ###### * References: 
 >>###### 1. datetime module - https://docs.python.org/3/library/datetime.html
+
+- #### Week06
+> w06_squareroot.py
+>> Program checks if current date falls on a weekday or not
+>>    ###### * References: 
+>>###### 1. datetime module - https://docs.python.org/3/library/datetime.html
