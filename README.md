@@ -5,10 +5,19 @@
 
 ---
 
-- #### Week01
+### Table of Contents
+
+* [Week01 - Hello World](#Week01 - Hello World)
+* [Week02 - Bank](##### Week02 - Bank)
+
+
+
+#### Week01 - Hello World
 > w01_helloworld.py  
 >> Program displays "Hello World!"
-- #### Week02
+
+
+#### Week02 - Bank
 > w02_bank.py
 >> Program prompts the user and read in two money amounts in cents, adds the two amounts together and outputs the answer with a euro sign and decimal point between the euro and cent of the amount.
 - #### Week03
