@@ -8,7 +8,9 @@
     # I noticed that while allowing infinite iterations of the square root calculation, python limits the number of digits at 17 so the results are repeating once 17-digit accuracy is achieved.
     # Exploiting this "feature" the program can store results in a container and check current result against previous iteration. 
     # If the two are the same, the result must be the most accurate within this 17-digit restriction and the program can break out of the loop as there is no need to iterate any more.
-# ref: Newton-Raphson Method: https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/
+# ref: Newton-Raphson Formula: https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/
+# ref: 17 digit rounding: https://docs.python.org/3/tutorial/floatingpoint.html
+
 
 # -------fn_newton------------------------start
 
@@ -18,7 +20,7 @@ def fn_newton(number,disp=0):
     x=number #starting number as per user input
     res=[] # result container to find the most accurate approximation
     while i<itr:
-        x=(x+number/x)/2 # Calculating the Square Root of a Number using the Newton-Raphson Method
+        x=0.5*(x+number/x) # Calculating the Square Root of a Number using the Newton-Raphson Method
         i+=1 # increase iteration counter by 1
         if x not in res: # checks if results are repeating
             res.append(x) # if not, stores result in the result container "res[]" and continues with the loop
