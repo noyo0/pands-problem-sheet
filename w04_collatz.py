@@ -17,6 +17,6 @@ while number > 1:
     else:
         number = number*3+1
     # convert to string and add result to list[numbers]
-    numbers.append(str(number))
+    numbers.append(number)
 # print items of list[numbers] with space as divider
 print(*numbers) # (print with custom dividers - ref: https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-single-row)
