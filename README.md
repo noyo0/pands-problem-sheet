@@ -133,3 +133,33 @@ By rounding the calculation to a smaller number than 17, thus reducing accuracy,
 ##### *1. Newton-Raphson Method: (https://en.wikipedia.org/wiki/Newton%27s_method)*
 ##### *2. Newton-Raphson Formula: (https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/)*
 ##### *3. Floating Point Arithmetic: Issues and Limitations: https://docs.python.org/3/tutorial/floatingpoint.html*
+---
+---
+<br>
+
+## Week07: ecounter
+> w07_ecounter.py
+
+    Weekly Task Description:
+    "Write a program that reads in a text file and outputs the number of e's it contains. Think about what is being asked here, document any assumptions you are making.
+    The program should take the filename from an argument on the command line. I have not shown you how to do this, you need to look it up."
+
+The program can run in default mode: <br>Program reads in text file from local directory and loops through each caracter in the text while increasing counter variable by one if character in search variable matches with string item. After the loop finished the number of characters along with sourcefile name and total number of characters is displayed.
+In default mode the text file is **haiku1.txt** and the counted character is **"e"**. <br>
+The program can also run with Command Line Arguments; first argument is the file name, the second argument is the character to be counted <br>
+Available filenames are:
+- haiku1.txt 
+- haiku2.txt 
+- haiku3.txt.<br>
+Any letter of the English alphabet can be chosen to be counted. The counter is case sensitive.<br>
+**(both arguments must be given otherwise the default mode runs)**
+
+
+##### - *References:* 
+##### *1. Count occurence ref: https://www.geeksforgeeks.org/python-count-occurrences-of-a-character-in-string/*
+##### *2. Open textfile with encoding specified ref: https://stackoverflow.com/questions/9233027/unicodedecodeerror-charmap-codec-cant-decode-byte-x-in-position-y-character*
+##### *3. CLA ref: https://www.youtube.com/watch?v=QJBVjBq4c7E*
+##### *4. error handling "try/except" ref: https://www.w3schools.com/python/python_try_except.asp*
+---
+---
+<br>
