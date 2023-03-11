@@ -12,6 +12,7 @@
 - Week04: Collatz
 - Week05: Weekday
 - Week06: Square root
+- Week07: Character counter
 <br>
 
 >
