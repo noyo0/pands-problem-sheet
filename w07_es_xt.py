@@ -10,27 +10,28 @@
 # os listdir ref: https://realpython.com/working-with-files-in-python/#:~:text=To%20get%20a%20list%20of,file%20size%20and%20modification%20date.
 # Program reads in text file from "textfiles/" directory and loops through each caracter and increases counter by one if character in search variable matches with string item.
 
-import argparse
-import os
-#--------------CLA
+import argparse # argparse module to set up command line arguments
+import os # os module to scan files in directory
+
+#--------------configuring Command line arguments-------------
 parser = argparse.ArgumentParser(description="Count character occurances in text")
 parser.add_argument("-f", "--file", type=str, required=False, help="filename with extension (mandatory argument)")
 parser.add_argument("-c", "--char", type=str, required=False, default= "e", help= "a character (optional, default is: e)")
 args = parser.parse_args()
 
 #-------counter-function
-def fn_counter(FILENAME,SEARCH):
-    count=0
-    with open(f"textfiles/{FILENAME}", "rt", encoding="utf8") as f:
-        for data in f:
-            text = data.strip()
-            for t in text:
-                if t == SEARCH:
-                    count += 1
-        print(f"\n{FILENAME} has {count} counts of \"{SEARCH}\" characters.\n")
+def fn_counter(FILENAME,SEARCH): # define counter function with 2 arguments for filename to read and character to search
+    count=0 # initialise counter
+    with open(f"textfiles/{FILENAME}", "rt", encoding="utf8") as f: #reading in file within "textfiles" directory as per name passed from command line argument
+        for data in f: # reading each line in f and storing as "data"
+            text = data.strip() #removing leading and trailing characters and storing stripped in "text"
+            for t in text: # cycling through each character in text and storing as "t"
+                if t == SEARCH: # checking if current character in "t" is the character passed from command line argument
+                    count += 1 # increase count if character matches
+        print(f"\n{FILENAME} has {count} counts of \"{SEARCH}\" characters.\n") #print result along with filename and target character
 
 # ------------- file list function
-def fn_list():
+def fn_list(): # define function to list available text files in "textfiles" directory
     filelst=os.scandir('textfiles/')
     for f in filelst:
         print(f)
@@ -39,12 +40,12 @@ def fn_list():
 #-------------call counter function with CLA or print file list if filename doesn't match-----------
 
 try:
-    fn_counter(args.file,args.char)
-except:
-    print("""\nERROR - Something didn't work out as planned.\n
+    fn_counter(args.file,args.char) # calling function with arguments passed from command line arguments
+except: # giving user instructions and calling "fn_list" to create available file list
+    print("""\nERROR - Something didn't work out as planned.\n 
     Please use arguments:
   -f, filename with extension (mandatory argument)
-  -c, a character to count (optional, default is: e)
+  -c, a character to count (default is: e)
     \nCurrently available text files: \n""")
     fn_list()
 

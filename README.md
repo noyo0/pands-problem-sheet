@@ -169,7 +169,10 @@ Command Line Arguments configured using **argparse** instead of sys. (ref 1. and
 Program calls function "fn_counter" that carries out the task of reading in the text file given in the Command line argument as -f and counts the character given as second argument as -c while default is "e".<br> The textfile is read in as UTF-8 to deal with the read errors I encounterd. (ref 3.)
 <br>When the loop finished the results are printed including file name, character count and character selected.<br>
 **Error Handling**:
-Program runs a try / except (ref 3.) error handling to deal with running with no arguments or with filenames that are not in the folder. This includes a function "fn_list" that is listing all files in "textfiles" directory using the imported os module's os.scandir() function (ref 5.).
+Program runs a try / except (ref 3.) error handling to deal with running with no arguments or with filenames that are not in the folder. This includes a function "fn_list" that is listing all files in "textfiles" directory using the imported os module's os.scandir() function (ref 5.). <br>
+at "try" the programm calls "fn_counter" with arguments passed from command line<br>
+at "except" the program instruct user regarding arguents and provides list of availbale text files stored in "textfiles" folder
+
 
 ##### - *References:* 
 ##### *1. argparse ref: (https://www.youtube.com/watch?v=cdblJqEUDNo)*

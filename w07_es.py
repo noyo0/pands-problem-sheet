@@ -7,14 +7,14 @@
 # Command line Arguments with sys module ref: https://www.pythonforbeginners.com/argv/more-fun-with-sys-argv#:~:text=argv%3F-,sys
 
 
-import sys
+import sys # module to use Command line arguments
 
-FILENAME = sys.argv[1]
-count = 0
-with open(FILENAME, "rt") as f:
-        for data in f:
-            text = data.strip()
-            for t in text:
-                if t == "e":
-                    count += 1
-        print(count)
+FILENAME = sys.argv[1] # passing second argument (first is always the filename in sys)
+count = 0 #setting counter to 0
+with open(FILENAME, "rt") as f: # reading in file with filename passed from command line argument as "f"
+        for data in f: # reading each line in f and storing as "data"
+            text = data.strip() #removing leading and trailing characters and storing stripped in "text"
+            for t in text: # cycling through each character in text and storing as "t"
+                if t == "e": # checking if current character in "t" is an e character
+                    count += 1 #if yes, increase count by one
+        print(count) #print accumulated value of "count"
