@@ -113,7 +113,7 @@ There is no user interaction in this program.
 ---
 <br>
 
-#### Week06: Square root
+## Week06: Square root
 > w06_squareroot.py
 
     Weekly Task Description:
@@ -137,29 +137,48 @@ By rounding the calculation to a smaller number than 17, thus reducing accuracy,
 ---
 <br>
 
-## Week07: ecounter
-> w07_ecounter.py
-
+## Week07: Character counter
+###  Simple version
+> w07_es.py
+    
     Weekly Task Description:
-    "Write a program that reads in a text file and outputs the number of e's it contains. Think about what is being asked here, document any assumptions you are making.
-    The program should take the filename from an argument on the command line. I have not shown you how to do this, you need to look it up."
+    "Write a program that reads in a text file and outputs the number of e's it contains.
+    The program should take the filename from an argument on the command line. I have not shown you how to do this, you need to look it up."    
+    
+- *Program assumes the user already knows that moby-dick.txt must be given as argument.*
 
-The program can run in default mode: <br>Program reads in text file from local directory and loops through each caracter in the text while increasing counter variable by one if character in search variable matches with string item. After the loop finished the number of characters along with sourcefile name and total number of characters is displayed.
-In default mode the text file is **haiku1.txt** and the counted character is **"e"**. <br>
-The program can also run with Command Line Arguments; first argument is the file name, the second argument is the character to be counted <br>
-Available filenames are:
-- haiku1.txt 
-- haiku2.txt 
-- haiku3.txt.<br>
-Any letter of the English alphabet can be chosen to be counted. The counter is case sensitive.<br>
-**(both arguments must be given otherwise the default mode runs)**
-
+Program reads in a text file with filename passed from argument on command line to "FILENAME" variable using the imported **sys module** (ref 1. and 2.). File is read in as "f" using the with method as discussed in week 7 lecture.<br> A for loop reads in each line of the text stored in "f" as "data". Text in "data" is formatted by stripping leading and trailing characters (ref 3.), the result is stored in variable "text". Another for loop cycles throuhg each character storing current character in "t". An if statement checks if the current character in "t" variable is a character **e**, if so, variable "count" is increased by one (ref 4.). When the loop finished, the accumulated value of "count" is printed.<br>
+***Limitations:*** Program only works with text file **moby-dick.txt** located in the same directory and only looks for the character **"e"**.
 
 ##### - *References:* 
-##### *1. Count occurence ref: https://www.geeksforgeeks.org/python-count-occurrences-of-a-character-in-string/*
-##### *2. Open textfile with encoding specified ref: https://stackoverflow.com/questions/9233027/unicodedecodeerror-charmap-codec-cant-decode-byte-x-in-position-y-character*
-##### *3. CLA ref: https://www.youtube.com/watch?v=QJBVjBq4c7E*
-##### *4. error handling "try/except" ref: https://www.w3schools.com/python/python_try_except.asp*
+##### *1. Command line Arguments with sys module ref: (https://www.pythonforbeginners.com/argv/more-fun-with-sys-argv#:~:text=argv%3F-,sys)*
+##### *2. CLA with sys ref: (https://www.youtube.com/watch?v=QJBVjBq4c7E)*
+##### *3. strip method ref: (https://www.w3schools.com/python/ref_string_strip.asp#:~:text=The%20strip()%20method%20removes,default%20leading%20character%20to%20remove)*
+##### *4. count occurence ref: (https://www.geeksforgeeks.org/python-count-occurrences-of-a-character-in-string/)*
+<br>
+
+### Extended version
+> w07_es_xt.py
+
+- Extended version assumes the user starts the program unaware that arguments must be given. The programs features extended so it works with any of the files stored in specific folder "textfiles" and the user can chose any character while default is "e".
+
+Command Line Arguments configured using **argparse** instead of sys. (ref 1. and 2.)are passing 2 arguments to a function "fn_counter" <br>
+**Command Line Argumnents are:**<br>
+**-f** for a filename to read in. This is passed to the "FILENAME" argument in function "fn_counter"<br>
+**-c** for a character to count. This is passed to the "SEARCH" argument in "fn_counter" with default value "e".<br>
+Program calls function "fn_counter" that carries out the task of reading in the text file given in the Command line argument as -f and counts the character given as second argument as -c while default is "e".<br> The textfile is read in as UTF-8 to deal with the read errors I encounterd. (ref 3.)
+<br>When the loop finished the results are printed including file name, character count and character selected.<br>
+**Error Handling**:
+Program runs a try / except (ref 3.) error handling to deal with running with no arguments or with filenames that are not in the folder. This includes a function "fn_list" that is listing all files in "textfiles" directory using the imported os module's os.scandir() function (ref 5.).
+
+##### - *References:* 
+##### *1. argparse ref: (https://www.youtube.com/watch?v=cdblJqEUDNo)*
+##### *2. argparse ref. (https://docs.python.org/3/library/argparse.html)*
+#####  Count occurence ref: (https://www.geeksforgeeks.org/python-count-occurrences-of-a-character-in-string/)
+##### *3. Open textfile with encoding specified ref: (https://stackoverflow.com/questions/9233027/unicodedecodeerror-charmap-codec-cant-decode-byte-x-in-position-y-character)
+##### *4. error handling "try/except" ref: (https://www.w3schools.com/python/python_try_except.asp)*
+##### *5 os.scnadir() ref: (https://docs.python.org/3/library/os.html#os.scandir)*
+##### *6 line split ref: (https://www.youtube.com/watch?v=oAFkPMbwRVY&t=214s)*
 ---
 ---
 <br>
