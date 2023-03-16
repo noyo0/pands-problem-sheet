@@ -25,7 +25,7 @@ def fn_counter(FILENAME,SEARCH): # define counter function with 2 arguments for 
     with open(f"textfiles/{FILENAME}", "rt", encoding="utf8") as f: #reading in file within "textfiles" directory as per name passed from command line argument
         for data in f: # reading each line in f and storing as "data"
             text = data.strip() #removing leading and trailing characters and storing stripped in "text"
-            for t in text: # cycling through each character in text and storing as "t"
+            for t in text: # cycling through each character in text and storing in "t"
                 if t == SEARCH: # checking if current character in "t" is the character passed from command line argument
                     count += 1 # increase count if character matches
         print(f"\n{FILENAME} has {count} counts of \"{SEARCH}\" characters.\n") #print result along with filename and target character
