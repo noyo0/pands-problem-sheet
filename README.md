@@ -13,6 +13,7 @@
 - Week05: Weekday
 - Week06: Square root
 - Week07: Character counter
+- Week08: Plotting
 <br>
 
 >
@@ -186,3 +187,24 @@ at "except" the program instruct user regarding arguents and provides list of av
 ---
 ---
 <br>
+
+### Week08: Plotting
+> w08_plottask.py
+
+    Weekly Task Description:
+    "Write a program called plottask.py that displays:
+        - a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2,
+        - and a plot of the function  h(x)=x3 in the range [0, 10],
+    on the one set of axes."
+
+Program imports two libraries: numpy and matplotlib.pyplot, then generates a list of 1000 random numbers from a normal distribution with a mean of 5 and a standard deviation of 2 using the numpy library (*Reference 1.*).<br>
+Next, the program code defines the values for x in **h(x)=x^3** and creates a list of these values in the range from 0 to 10 using a for loop.<br>
+Afterward, the program defines font styles for the plot using the matplotlib library(*Reference 2. and 3.*). Then sets the style for various elements of the plot.<br> The font style in the title is set separately for it can displayed with a separate font style. (*Reference 4.*)<br>
+The program then plots the histogram of the 1000 random numbers from the normal distribution using the hist() function from matplotlib, with the color of the bars being set to green as shown in the lecture. It also plots the function h(x)=x^3 using the plot() function from matplotlib, with the color of the line being set to red.<br>
+A legend is configured to the plot with labels for the histogram and function h(x)=x^3. The plot is then displayed using the show() function.
+
+#### - *References:* 
+##### *1. numpy ref: https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html*
+##### *2. matplotlib ref: https://matplotlib.org/stable/tutorials/introductory/quick_start.html*
+##### *3. customise default style ref: https://stackoverflow.com/questions/3899980/how-to-change-the-font-size-on-a-matplotlib-plot*
+##### *4. change font style for title ref: https://stackoverflow.com/questions/29426075/how-to-modify-the-font-size-in-matplotlib-venn/70231723#70231723*
