@@ -36,7 +36,7 @@ plt.rc("xtick", labelsize=small)    # fontsize of the tick labels
 plt.rc("ytick", labelsize=small)    # fontsize of the tick labels
 plt.rc("legend", fontsize=small)    # legend fontsize
 plt.rc("font", family="serif")          # controls default text style
-specfont1 = {"family":"serif","color":"#4a6741","size":14}
+specfont1 = {"family":"serif","color":"#4a6741","size":10}
 #--------------------------------------------------------------I
 #---------------labels---------------------->
 plt.title("""Week 08 task - A histogram of a normal distribution 
