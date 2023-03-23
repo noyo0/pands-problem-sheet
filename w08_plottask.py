@@ -25,7 +25,7 @@ for i in range(0,11):
 #-----------def plot styles------------------------------>
 ax=plt.axes()
 ax.set_facecolor("#F0F4EF")
-plt.grid(True, color="#799377")
+plt.grid(True, color="#799377", linestyle="dotted")
 small = 8
 med = 10
 big = 14
