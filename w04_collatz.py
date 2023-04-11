@@ -20,3 +20,5 @@ while number > 1:
     numbers.append(number)
 # print items of list[numbers] with space as divider
 print(*numbers) # (print with custom dividers - ref: https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-single-row)
+
+# on my feedback I was informed that the resulting numbers have commas in between but I couldn't replicate the issue. By using print with a star 'print(*numbers)' the result is without commas.
