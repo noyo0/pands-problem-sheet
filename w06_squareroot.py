@@ -11,8 +11,8 @@
 # ref: Newton-Raphson Formula: https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/
 # ref: 17 digit rounding: https://docs.python.org/3/tutorial/floatingpoint.html
 
-
-''' # -------fn_newton------------------------start
+''' original
+# -------fn_newton------------------------start
 
 def fn_newton(number,disp=0):
     i=0
@@ -33,20 +33,20 @@ def fn_newton(number,disp=0):
 # -------fn_newton------------------------end'''
 
 # ☝️AFTER FEEDBACK 
-# - eliminate limited iteration from while loop, 
+# - eliminated limited iteration from while loop
 # - improve output with the introduction of user defined rounding,
 # - give more meaningful variable names
 
 # -------fn_newton------------------------start
 def fn_newton(number,roundto=0):
     x=number #starting number as per user input
-    result=[] # result container to find the most accurate approximation
-    while x != result:
-        x=round(0.5*(x+number/x),roundto) # Calculating the Square Root of a Number using the Newton-Raphson Method + rounding to 
-        if x not in result: # checks if results are repeating
-            result.append(x) # if not, stores result in the result container "res[]" and continues with the loop
+    prevresult=[] # result container for previous results to compare with current
+    while x != prevresult: # by checking x against previous prev(ious)result I was able to remove separate iteration as 'while' is only true if current result (x) is not equal to previous result
+        x=round(0.5*(x+number/x),roundto) # Calculating the Square Root of a Number using the Newton-Raphson Method + rounding to number of digits by user's choice
+        if x not in prevresult: # checks if results are repeating which indicates max accuracy
+            prevresult.append(x) # if not, stores result in the previous result container "prevresult[]" and continues with the loop
         else:
-            return(x)       
+            return(x) # once while is not true (previous and current results (x) are the same therefore most accurate approximation reached), the value of x is returned       
 # -------fn_newton------------------------end
 
 # user interaction ---------
@@ -56,7 +56,7 @@ while number<=0: # program will wex the user until positive number is given
     number=float(input("...please enter a positive floating-point number: ")) 
 # enter rounding
 roundto=int(input("How many digits to round to? ")) # User prompted for display method
-# call function
+# call fn_newton function
 sqrroot=fn_newton(number,roundto) # setting value for "p" by calling function fn_newton with arguments defined by user interaction
 #output square root result
-print(f"\n\n The square root of {number} is approximately: {sqrroot}") #starting number and approximate square root is printed as per user interaction
+print(f"\n The square root of {number} is approximately: {sqrroot}") #starting number and approximate square root is printed as per user interaction

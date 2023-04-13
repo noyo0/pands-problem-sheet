@@ -46,25 +46,32 @@ Program displays "Hello World!"
 
 Program prompts the user to type in two money amounts in cents and stores them in 2 variables "amount1" and "amount2". The program adds the two values together and divides the sum by 100 thus converting the cent values to euro and outputs the answer with a euro sign and decimal point between the euro and cent of the amount.
 
+☝️Feedback was: 
+*The real test of this was can you do this without using floats (even hidden floats, e.g. /100) for you:
+This is fine, though I would like the solution to be formatted and it would be ideal is you did not use floats (/100)*
+
+#### 🤞After correction: 
+Instead of a simple division (/100) that produces a float stored in 'eur', the program uses a Floor division (// 100) that returns the nearest whole number to get the euro amount and a Modulus (% 100) to get the remainder of the division for the cent amounts. Both stored in their respective variables aptly named 'euro' and 'cent'. 
+The output then formatted so the starting values, their sum in cents and the converted amount is displayed in one sentence.
+
+- ###### *References:*
+
+###### *1. Integer and float division ref: https://www.educative.io/answers/what-is-integer-and-float-division-in-python*
+
+
 ---
 ---
 <br>
 
 ## Week03: Accounts
-> w03_waccounts.py
+> w03_accounts.py
 
     Weekly Task Description:
     "Write a python program called accounts.py that reads in
     a 10 character account number and outputs the account number
     with only the last 4 digits showing 
-    (and the first 6 digits replaced with Xs)."
-
-Program promts user for a 10 digit account number, then devides the number by 10,000 to get the last 4 digits with a modulo operator and stores the value in a variable. Program than prints out 6 "X"characrters followed by the 4 digits stored in the variable.
->
- - ### Week03: Extra 
-> w03_accounts2lenght.py
- 
-    Weekly Task Description Extra: 
+    (and the first 6 digits replaced with Xs).
+    **Weekly Task Description Extra: **
     "Modify the program to deal with account numbers of any length (yes that is a vague requirement, comment your assumptions)"
 
 The modified program promts user for a 10 digit account number, then checks lenght of the given number using the len function (*Reference 1.*) and deducts 4 to establish how many characters of the accoun t number must be replaced with "X". The result is then stored in variable "coverlenght". The program then converts the original number to string and stores it in variable "accstr" so it can be concatenated and its individual characters can be called between a range (*Reference 2.*). Finally the program concatenates as many "X" caracters as the value stored in coverlenght and calls the last 4 digits from "accstr" by referring to the range from position that equals coverlenght to position that equals coverlenght + 4.
@@ -72,6 +79,11 @@ Since the user entry is stored and manipulated as string, there is no limitation
 - ##### *References:*
 ##### *1. len function (https://www.geeksforgeeks.org/python-string-length-len/)*
 ##### *2. find certain section of a string (https://www.interviewqs.com/ddi-code-snippets/substring-python)*
+
+☝️Feedback was: 
+*There is a much simpler way of doing this with string splicing (ok I see you put that in aother file)*
+
+#### 🤞I hope that means A-okay.
 ---
 ---
 <br>
@@ -96,6 +108,22 @@ Since the user entry is stored and manipulated as string, there is no limitation
 ##### *2. print with custom dividers - ref: (https://stackoverflow.com/questions/11178061/pint-list-without-brackets-in-a-single-row)*
 ##### *3. Collatz conjencture - ref: (https://en.wikipedia.org/wiki/Collatz_conjecture)*
 ##### *4. The Simplest Math Problem No One Can Solve - Collatz Conjecture - ref: (https://www.youtube.com/watch?v=094y1Z2wpJg&t=1s)*
+
+☝️Feedback was: 
+*Some people did not pay attention to the requested output, for you:
+good, but this puts commas between the numbers, can you do it without the commas*
+
+#### 🤞I was unable to replicate the issue.
+By using print with a star in front **print(*numbers)** the result is showing without commas.<br>
+Tested in VSC and cmd Terminal, result was without commas in both cases.
+
++ *Copy/Paste example from cmd Terminal:*
+C:\Users\norbe\OneDrive\ATU_Galway\pands\pands-problem-sheet (main -> origin)
+λ python w04_collatz.py
+Please enter a positive integer: 5
+your result:
+5 16 8 4 2 1
+
 ---
 ---
 <br>
@@ -111,6 +139,9 @@ An if statement determines wether the current day represented as integer is a we
 There is no user interaction in this program.
 ##### - *References:* 
 ##### *1. datetime module - (https://docs.python.org/3/library/datetime.html)*
+
+☝️There was no feedback on this one
+
 ---
 ---
 <br>
@@ -128,13 +159,21 @@ Exploiting this "feature" so to speak, I created a container for the results "re
 As a failsafe in case for extreme large numbers I left the max iteration variable in the function with value set to 100. This may be an unnecesary precaution, I could count a few iterations with extra large numbers and settle for a smaller number but didn't want to spen dmore time.<br>
 The **second part** of the program is user interaction which provides the starting number where the Program insists on a positive number if negative is given, and user also choses if the result is printed as integer or floating point number. <br>
 - **Notes:**
-<br>
 By rounding the calculation to a smaller number than 17, thus reducing accuracy, the return of the result can be quicker. To avoid "feature creep", I ultimately removed this function. I left "display" argument only to demonstrate default values in function arguments.
 
 - ##### *References:*
 ##### *1. Newton-Raphson Method: (https://en.wikipedia.org/wiki/Newton%27s_method)*
 ##### *2. Newton-Raphson Formula: (https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/)*
 ##### *3. Floating Point Arithmetic: Issues and Limitations: https://docs.python.org/3/tutorial/floatingpoint.html*
+
+☝️Feedback was: 
+*In this task I was asking you to write your own function that took in a number and returned a value, for you:
+Good, though you do this for a specific number of iterations. Try to use more meaningfull variable names.*
+
+#### 🤞After correction:
+- eliminated limited iteration from while loop by using the container for previous results (prevresults[]) in the while loop instead of a separate iterator variable. **While** is true if current result and previous result is not equal. Once they are the same, the calculation reached its max accuracy and current result (x) is retuned for the function.
+- improved output with the introduction of user defined rounding variable
+- given more meaningful variable names
 ---
 ---
 <br>

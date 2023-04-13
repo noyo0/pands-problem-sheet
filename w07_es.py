@@ -42,7 +42,7 @@ def fn_list(): # define function to list available text files in "textfiles" dir
 try:
     fn_counter(args.file,args.char) # calling function with arguments passed from command line arguments
 except: # giving user instructions and calling "fn_list" to create available file list
-    print("""\nERROR - Something didn't work out as planned.\n 
+    print("""\nERROR - missing file or argument.\n 
     Please use arguments:
   -f, filename with extension (mandatory argument)
   -c, a character to count (default is: e)
@@ -51,7 +51,9 @@ example:
   w07_es.py -f moby-dick.txt -c a
 (this will search for 'a' characters in mobdy-dick.txt)
 
-    \nCurrently available text files: \n""")
+    Currently available text files: \n""")
     fn_list()
 
+# ☝️RE: FEEDBACK 
 # two versions were uploaded, this version was not included in the review.
+# redundant version removed

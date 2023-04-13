@@ -19,6 +19,27 @@ while number > 1:
     # convert to string and add result to list[numbers]
     numbers.append(number)
 # print items of list[numbers] with space as divider
+print('your result:')
 print(*numbers) # (print with custom dividers - ref: https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-single-row)
 
-# on my feedback I was informed that the resulting numbers have commas in between but I couldn't replicate the issue. By using print with a star 'print(*numbers)' the result is without commas.
+# ☝️RE: FEEDBACK
+# my feedback was: Task04 Collatz:
+'''Some people did not pay attention to the requested output, for you:
+good, but this puts commas between the numbers, can you do it without the commas'''
+
+# I couldn't replicate the issue. 
+# By using print with a star in front 'print(*numbers)' the result is showing without commas. 
+# tested in VSC and cmd Terminal
+
+# example from cmd Terminal:
+# C:\Users\norbe\OneDrive\ATU_Galway\pands\pands-problem-sheet (main -> origin)
+'''
+λ python w04_collatz.py
+Please enter a positive integer: 5
+your result:
+5 16 8 4 2 1
+
+
+
+'''
+
