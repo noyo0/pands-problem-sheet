@@ -28,7 +28,8 @@
     Weekly Task Description:
     "Commit and push a file to the problem sheet called helloworld.py"
 
-Program displays "Hello World!"
+Program displays "Hello World!" Using the print() function.
+
 
 ---
 ---
@@ -44,20 +45,19 @@ Program displays "Hello World!"
     - Add the two amounts
     - Print out the answer in a human readable format with a euro sign and decimal point between the euro and cent of the amount"
 
-Program prompts the user to type in two money amounts in cents and stores them in 2 variables "amount1" and "amount2". The program adds the two values together and divides the sum by 100 thus converting the cent values to euro and outputs the answer with a euro sign and decimal point between the euro and cent of the amount.
-
-☝️Feedback was: 
-*The real test of this was can you do this without using floats (even hidden floats, e.g. /100) for you:
-This is fine, though I would like the solution to be formatted and it would be ideal is you did not use floats (/100)*
-
-#### 🤞After correction: 
-Instead of a simple division (/100) that produces a float stored in 'eur', the program uses a Floor division (// 100) that returns the nearest whole number to get the euro amount and a Modulus (% 100) to get the remainder of the division for the cent amounts. Both stored in their respective variables aptly named 'euro' and 'cent'. 
-The output then formatted so the starting values, their sum in cents and the converted amount is displayed in one sentence.
+Program prompts the user to type in two money amounts in cents and stores them in 2 variables "amount1" and "amount2". The program adds the two values together and divides the sum by 100 thus converting the cent values to euro and outputs the answer euros and cents.
 
 - ###### *References:*
 
 ###### *1. Integer and float division ref: https://www.educative.io/answers/what-is-integer-and-float-division-in-python*
 
+<br>☝️Feedback was: 
+*The real test of this was can you do this without using floats (even hidden floats, e.g. /100) for you:
+This is fine, though I would like the solution to be formatted and it would be ideal is you did not use floats (/100)*
+
+#### 🤞After correction: 
+Instead of a simple division (/100) that produced a floating point number stored in 'eur', the program uses a Floor division (// 100) that returns the nearest whole number to get the euro amount and a Modulus (% 100) to get the remainder of the division for the cent amounts. Both stored in their respective variables aptly named 'euro' and 'cent'. 
+The output then formatted so the starting values, their sum in cents and the converted amount is displayed in one sentence.
 
 ---
 ---
@@ -74,16 +74,18 @@ The output then formatted so the starting values, their sum in cents and the con
     **Weekly Task Description Extra: **
     "Modify the program to deal with account numbers of any length (yes that is a vague requirement, comment your assumptions)"
 
-The modified program promts user for a 10 digit account number, then checks lenght of the given number using the len function (*Reference 1.*) and deducts 4 to establish how many characters of the accoun t number must be replaced with "X". The result is then stored in variable "coverlenght". The program then converts the original number to string and stores it in variable "accstr" so it can be concatenated and its individual characters can be called between a range (*Reference 2.*). Finally the program concatenates as many "X" caracters as the value stored in coverlenght and calls the last 4 digits from "accstr" by referring to the range from position that equals coverlenght to position that equals coverlenght + 4.
+The program promts user for a 10 digit account number, then checks lenght of the given number using the len function (*Reference 1.*) and deducts 4 to establish how many characters of the account number must be replaced with 'X'. The result is then stored in variable 'coverlenght'. The program then converts the original number to string and stores it in variable 'accstr' so it can be concatenated and its individual characters can be sliced between a range (*Reference 2.*). 
+Finally the program concatenates as many 'X' caracters as the value stored in 'coverlenght' and calls the last 4 digits from 'accstr' by referring to the range from position that equals coverlenght to position that equals coverlenght + 4.
 Since the user entry is stored and manipulated as string, there is no limitations to numbers only, the program can deal with any character.
 - ##### *References:*
 ##### *1. len function (https://www.geeksforgeeks.org/python-string-length-len/)*
-##### *2. find certain section of a string (https://www.interviewqs.com/ddi-code-snippets/substring-python)*
+##### *2. find certain section of a string (https://www.interviewqs.com/ddi-code-snippets/substring-python)* 
+<br>
 
 ☝️Feedback was: 
 *There is a much simpler way of doing this with string splicing (ok I see you put that in aother file)*
 
-#### 🤞I hope that means A-okay.
+#### 🤞I hope that means A-okay. Redundant file removed.
 ---
 ---
 <br>
@@ -102,26 +104,29 @@ Since the user entry is stored and manipulated as string, there is no limitation
     Please enter a positive integer: 10
     10 5 16 8 4 2 1"
 
- Program asks user to input any positive integer which is stored as integer in variable "number". A list "numbers[]" is created where each result of the calculation will be stored (*Reference 1.*). <br> The formula to get each member of a Collatz sequence was provided in the Weekly Task Description. The program assumes the endpoint of a Collatz seqence is always positive 1 /until someone proves otherwise/ (*Reference 3. and 4.*) so a while loop is initiated which breaks when the value of "number" reaches 1. <br>Whithin the while loop an if statement assigns the appropriate calculations to odd and even numbers based on their divisibility with 2 with 0 remiander using a modulus operator.<br> The result of each itearations updates the variable "number" than stored in list "numbers[]" (*Reference 1.*). Once the value of "number" reaches 1, the loop is ended and the values stored in "numbers" are printed with formatting that prints each item side by side with space as divider (*Reference 2.*) as per example in the task description.
+ Program asks user to input any positive integer which is stored as integer in variable "number". A list "numbers[]" is created where each result of the calculation will be stored starting with the initial number from user input(*Reference 1.*). <br> The formula to get each member of a Collatz sequence was provided in the Weekly Task Description. The program assumes the endpoint of a Collatz seqence is always positive 1 /until someone proves otherwise/ (*Reference 3. and 4.*) so a while loop is initiated which breaks when the value of "number" reaches 1. <br>Whithin the while loop an if statement assigns the appropriate calculations to odd and even numbers based on their divisibility with 2 with 0 remiander using a modulus operator.<br> The result of each itearations updates the variable "number" than stored in list "numbers[]" (*Reference 1.*). Once the value of "number" reaches 1, the loop is ended and the values stored in "numbers" are printed with formatting that prints each item side by side with space as divider (*Reference 2.*) as per example in the task description.
 -    ##### *References:* 
 ##### *1. list item data types - ref: (https://www.w3schools.com/python/python_lists.asp)*
 ##### *2. print with custom dividers - ref: (https://stackoverflow.com/questions/11178061/pint-list-without-brackets-in-a-single-row)*
 ##### *3. Collatz conjencture - ref: (https://en.wikipedia.org/wiki/Collatz_conjecture)*
-##### *4. The Simplest Math Problem No One Can Solve - Collatz Conjecture - ref: (https://www.youtube.com/watch?v=094y1Z2wpJg&t=1s)*
+##### *4. The Simplest Math Problem No One Can Solve - Collatz Conjecture - ref: (https://www.youtube.com/watch?v=094y1Z2wpJg&t=1s)*<br>
+<br>
+
 
 ☝️Feedback was: 
-*Some people did not pay attention to the requested output, for you:
-good, but this puts commas between the numbers, can you do it without the commas*
+*Some people did not pay attention to the requested output, for you: good, but this puts commas between the numbers, can you do it without the commas* 
 
-#### 🤞I was unable to replicate the issue.
-By using print with a star in front **print(*numbers)** the result is showing without commas.<br>
+
+#### 🤞I was unable to replicate the issue, result does show without commas.
+By using print with a star in front of the variable <print(*numbers)> the result is showing without commas.<br>
 Tested in VSC and cmd Terminal, result was without commas in both cases.
 
-+ *Copy/Paste example from cmd Terminal:*
-C:\Users\norbe\OneDrive\ATU_Galway\pands\pands-problem-sheet (main -> origin)
-λ python w04_collatz.py
-Please enter a positive integer: 5
-your result:
+
++ *Copy/Paste example from cmd Terminal:*<br>
+C:\Users\norbe\OneDrive\ATU_Galway\pands\pands-problem-sheet (main -> origin)<br>
+λ python w04_collatz.py<br>
+Please enter a positive integer: 5<br>
+your result:<br>
 5 16 8 4 2 1
 
 ---
@@ -152,21 +157,20 @@ There is no user interaction in this program.
     Weekly Task Description:
     "Write a program that takes a positive floating-point number as input and outputs an approximation of its square root. You should create a function called <tt>sqrt</tt> that does this. I am asking you to create your own sqrt function and not to use the built in functions x ** .5 or math.sqrt(x). This is to demonstrate that you can research and code a process (If you really needed the square root you would use one of the above methods). I suggest that you look at the newton method at estimating square roots.
 
-Program is separated into two parts;<br> **First part** is defining the square root function "fn_newton" to find a close approximate for square root of a given number with Newton-Raphson Method (*Reference 1.*) <br> The function "fn_newton" has 2 arguments;<br> "number" for storing the starting number from user interaction later and <br> "display" argument that determines if the result is displayed as floating point number (default:0) or as an integer (1) <br>
-The function starts with setting up values for the iterators, "i" is the iterator and "itr" is the maximum number of iterations. Also giving the value of "number" for "x" for the first iteration of the "x=0.5*(x+number/x)" formula (*Reference 2.*).<br> 
-Initially planned to iterate the calculation a set number of times and see what gives the best approximation but noticed that while allowing infinite iterations for the square root calculation, Python limits the number of digits at 17 so the results are repeating once 17-digit accuracy is achieved.<br> I found this number representation issue mentioned in reference to older versions of Python (*Reference 2.*).
-Exploiting this "feature" so to speak, I created a container for the results "res[]" so the program can store results in a list and check current result against the result from the previous iteration. <br> Once current result and previous iteration are the same, the result must be the most accurate within this 17-digit restriction and the program can break out of the loop as there is no need to iterate any more. 
-As a failsafe in case for extreme large numbers I left the max iteration variable in the function with value set to 100. This may be an unnecesary precaution, I could count a few iterations with extra large numbers and settle for a smaller number but didn't want to spen dmore time.<br>
-The **second part** of the program is user interaction which provides the starting number where the Program insists on a positive number if negative is given, and user also choses if the result is printed as integer or floating point number. <br>
-- **Notes:**
-By rounding the calculation to a smaller number than 17, thus reducing accuracy, the return of the result can be quicker. To avoid "feature creep", I ultimately removed this function. I left "display" argument only to demonstrate default values in function arguments.
-
+Program is separated into two parts;<br><br> **First part** is defining the square root function "fn_newton" to find a close approximate for square root of a given number with Newton-Raphson Method (*Reference 1.*) <br>The function "fn_newton" has 2 arguments;<br> "number" for storing the starting number from user interaction later and <br> "display" argument that determines if the result is displayed as floating point number (default:0) or as an integer (1) <br>
+The function starts with setting up values for the iterators, "i" is the iterator and "itr" is the maximum number of iterations. Also giving the value of "number" for "x" for the first iteration of the "x=0.5*(x+number/x)" formula (*Reference 2.*).<br>
+Initially planned to iterate the calculation a set number of times and see what gives the best approximation but noticed that while allowing infinite iterations for the square root calculation, Python limits the number of digits at 17 so the results are repeating once 17-digit accuracy is achieved.<br> I found this number representation issue mentioned in reference to older versions of Python as well (*Reference 3.*).<br>
+Exploiting this 'feature' so to speak, I created a container for the results "prevresult[]" so the program can store results in a list and check current result against the result from the previous iteration. <br>
+Once current result and previous iteration are the same, the result must be the most accurate within this 17-digit restriction and the program can break out of the loop as there is no need to iterate any more. Hence the condition of the while loop is set to be true until current calculation result (x) and the last item in previous result (prevresult[]) is equal. Once they are the same, the calculation reached its max accuracy and current result (x) is retuned for the function.
+<br>
+The **second part** of the program is user interaction which provides the starting number where the program insists on a positive number to be given, and user also choses rounding accuracy. <br>
+<br>
 - ##### *References:*
 ##### *1. Newton-Raphson Method: (https://en.wikipedia.org/wiki/Newton%27s_method)*
 ##### *2. Newton-Raphson Formula: (https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/)*
 ##### *3. Floating Point Arithmetic: Issues and Limitations: https://docs.python.org/3/tutorial/floatingpoint.html*
 
-☝️Feedback was: 
+<br>☝️Feedback was: 
 *In this task I was asking you to write your own function that took in a number and returned a value, for you:
 Good, though you do this for a specific number of iterations. Try to use more meaningfull variable names.*
 
@@ -185,44 +189,35 @@ Good, though you do this for a specific number of iterations. Try to use more me
     Weekly Task Description:
     "Write a program that reads in a text file and outputs the number of e's it contains.
     The program should take the filename from an argument on the command line. I have not shown you how to do this, you need to look it up."    
-    
-- *Program assumes the user already knows that moby-dick.txt must be given as argument.*
 
-Program reads in a text file with filename passed from argument on command line to "FILENAME" variable using the imported **sys module** (ref 1. and 2.). File is read in as "f" using the with method as discussed in week 7 lecture.<br> A for loop reads in each line of the text stored in "f" as "data". Text in "data" is formatted by stripping leading and trailing characters (ref 3.), the result is stored in variable "text". Another for loop cycles throuhg each character storing current character in "t". An if statement checks if the current character in "t" variable is a character **e**, if so, variable "count" is increased by one (ref 4.). When the loop finished, the accumulated value of "count" is printed.<br>
-***Limitations:*** Program only works with text file **moby-dick.txt** located in the same directory and only looks for the character **"e"**.
+- Program assumes the user starts the program unaware that arguments must be given. The programs handles any of the text files stored in a specific folder "textfiles" and the user can chose any character while default is "e".
+- If the program executed without arguments, an error message outlines what arguments are available and a list of text files to chose from.
 
-##### - *References:* 
-##### *1. Command line Arguments with sys module ref: (https://www.pythonforbeginners.com/argv/more-fun-with-sys-argv#:~:text=argv%3F-,sys)*
-##### *2. CLA with sys ref: (https://www.youtube.com/watch?v=QJBVjBq4c7E)*
-##### *3. strip method ref: (https://www.w3schools.com/python/ref_string_strip.asp#:~:text=The%20strip()%20method%20removes,default%20leading%20character%20to%20remove)*
-##### *4. count occurence ref: (https://www.geeksforgeeks.org/python-count-occurrences-of-a-character-in-string/)*
-<br>
-
-### Extended version
-> w07_es_xt.py
-
-- Extended version assumes the user starts the program unaware that arguments must be given. The programs features extended so it works with any of the files stored in specific folder "textfiles" and the user can chose any character while default is "e".
-
-Command Line Arguments configured using **argparse** instead of sys. (ref 1. and 2.)are passing 2 arguments to a function "fn_counter" <br>
+Command Line Arguments configured using **argparse**. (ref 1. and 2.) are passing 2 arguments to a function "fn_counter" <br>
 **Command Line Argumnents are:**<br>
 **-f** for a filename to read in. This is passed to the "FILENAME" argument in function "fn_counter"<br>
 **-c** for a character to count. This is passed to the "SEARCH" argument in "fn_counter" with default value "e".<br>
 Program calls function "fn_counter" that carries out the task of reading in the text file given in the Command line argument as -f and counts the character given as second argument as -c while default is "e".<br> The textfile is read in as UTF-8 to deal with the read errors I encounterd. (ref 3.)
 <br>When the loop finished the results are printed including file name, character count and character selected.<br>
 **Error Handling**:
-Program runs a try / except (ref 3.) error handling to deal with running with no arguments or with filenames that are not in the folder. This includes a function "fn_list" that is listing all files in "textfiles" directory using the imported os module's os.scandir() function (ref 5.). <br>
-at "try" the programm calls "fn_counter" with arguments passed from command line<br>
-at "except" the program instruct user regarding arguents and provides list of availbale text files stored in "textfiles" folder
+Program runs a try / except (ref 3.) error handling to deal with running with no arguments or with filenames that are not in the folder. This includes a second function "fn_list" that is listing all files in "textfiles" directory using the imported os module's os.scandir() function (ref 5.).<br>at "try" the programm calls "fn_counter" with arguments passed from command line<br>
+at "except" the program instruct user regarding arguments and provides list of availbale text files stored in "textfiles" folder
 
+- ###### *References:* 
+###### *1. argparse ref: (https://www.youtube.com/watch?v=cdblJqEUDNo)*
+###### *2. argparse ref. (https://docs.python.org/3/library/argparse.html)*
+###### *3 Count occurence ref: (https://www.geeksforgeeks.org/python-count-occurrences-of-a-character-in-string/)
+###### *4. Open textfile with encoding specified ref: (https://stackoverflow.com/questions/9233027/unicodedecodeerror-charmap-codec-cant-decode-byte-x-in-position-y-character)
+###### *5. error handling "try/except" ref: (https://www.w3schools.com/python/python_try_except.asp)*
+###### *6 os.scnadir() ref: (https://docs.python.org/3/library/os.html#os.scandir)*
+###### *7 line split ref: (https://www.youtube.com/watch?v=oAFkPMbwRVY&t=214s)*
 
-##### - *References:* 
-##### *1. argparse ref: (https://www.youtube.com/watch?v=cdblJqEUDNo)*
-##### *2. argparse ref. (https://docs.python.org/3/library/argparse.html)*
-#####  Count occurence ref: (https://www.geeksforgeeks.org/python-count-occurrences-of-a-character-in-string/)
-##### *3. Open textfile with encoding specified ref: (https://stackoverflow.com/questions/9233027/unicodedecodeerror-charmap-codec-cant-decode-byte-x-in-position-y-character)
-##### *4. error handling "try/except" ref: (https://www.w3schools.com/python/python_try_except.asp)*
-##### *5 os.scnadir() ref: (https://docs.python.org/3/library/os.html#os.scandir)*
-##### *6 line split ref: (https://www.youtube.com/watch?v=oAFkPMbwRVY&t=214s)*
+<br>☝️Feedback was: 
+*The specification for this task is a bit vague, I wanted to see what assumptions you made for this, for you:
+good, though I would suggest having the letter looked for as a vairable, so that the code can be easily reused for other letters, you program will crach if no argument is passed*
+
+#### 🤞I had two versions uploaded and the more simplistic first version was reviewed the extended version was not.<br> Removed redundant first version and updated readme file.
+
 ---
 ---
 <br>
